@@ -1,4 +1,4 @@
-package com.DataStructures;
+package com.DataStructures.HashMap;
 
 public class HashNode<K, V> {
     K key;
