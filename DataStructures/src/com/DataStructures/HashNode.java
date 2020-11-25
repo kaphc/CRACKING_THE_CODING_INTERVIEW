@@ -1,4 +1,4 @@
-package com.kavin;
+package com.DataStructures;
 
 public class HashNode<K, V> {
     K key;

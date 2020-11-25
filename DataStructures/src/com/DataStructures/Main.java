@@ -1,4 +1,4 @@
-package com.kavin;
+package com.DataStructures;
 
 public class Main {
 
