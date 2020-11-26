@@ -14,17 +14,22 @@ public class Question7 {
     private static void rotateMatrix(int[][] matrix) {
         int matrixLength = matrix.length;
 
-        for (int layer = 0; layer < (matrixLength / 2) + 1; layer++) {
-            int last = matrixLength - 1 - layer;
-            for (int i = layer; i < last; i++) {
-                int offset = i - layer;
+        int halfMatrixLength;
+        if (matrixLength % 2 == 0) {
+            halfMatrixLength = (matrixLength / 2);
+        } else {
+            halfMatrixLength = (matrixLength / 2) + 1;
+        }
 
-                int temp = matrix[layer][i];
-                matrix[layer][i] = matrix[last - offset][layer];
-                matrix[last - offset][layer] = matrix[last][last - offset];
-                matrix[last][last - offset] = matrix[i][last];
-                matrix[i][last] = temp;
+        for (int i = 0; i < halfMatrixLength; i++) {
+            for (int j = i; j < matrixLength - i - 1; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[matrixLength - j - 1][i];
+                matrix[matrixLength - j - 1][i] = matrix[matrixLength - i - 1][matrixLength - j - 1];
+                matrix[matrixLength - i - 1][matrixLength - j - 1] = matrix[j][matrixLength - i - 1];
+                matrix[j][matrixLength - i - 1] = temp;
             }
+            System.out.print("\n");
         }
     }
 
@@ -34,7 +39,7 @@ public class Question7 {
         rotateMatrix(matrix1);
         displayMatrix(matrix1);
 
-        int[][] matrix2 = {{1, 0, 3, 4}, {2, 4, 5, 6}, {0, 8, 9, 10}, {3, 6, 2, 12}};
+        int[][] matrix2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 14, 15}};
         displayMatrix(matrix2);
         rotateMatrix(matrix2);
         displayMatrix(matrix2);
