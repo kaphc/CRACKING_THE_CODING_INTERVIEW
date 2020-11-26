@@ -9,18 +9,18 @@ public class Question4 {
         int oddCountCharacters = 0;
         int charInInt;
 
-        for(int i=0; i<word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             charInInt = word.charAt(i);
 
             charSet[charInInt]++;
-            if(charSet[charInInt]%2 == 0) {
+            if (charSet[charInInt] % 2 == 0) {
                 oddCountCharacters--;
             } else {
                 oddCountCharacters++;
             }
         }
 
-        return oddCountCharacters<=1;
+        return oddCountCharacters <= 1;
     }
 
     public static void main(String[] args) {
