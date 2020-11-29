@@ -1,6 +1,4 @@
-package com.company.DoublyLinkedList;
-
-import com.company.LinkedList.LinkedListNode;
+package com.DataStructures.DoublyLinkedList;
 
 public class DoublyLinkedList<K> {
     private DoublyLinkedListNode<K> head;
